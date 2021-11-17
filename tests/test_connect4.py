@@ -26,9 +26,8 @@ def test_init():
 def test_make_window():
     game = connect4.Connect4(-150, 200, 50, 1)
     game.make_window("Connect 4", "light sky blue", 800, 600)
-    game.window.bgcolor() == "light sky blue"
-    game.window.screensize() == (800, 600)
-    game.window.tracer() == 0
+    assert game.window.bgcolor() == "light sky blue"
+    assert game.window.tracer() == 0
 
 
 def test_make_turtle():
