@@ -6,5 +6,5 @@
 1. Apply refactoring to the file “search_maze_before.py”
 
 
-2. Apply refactoring to your implementation of Sudoku from CS231.
+2. Create unit tests for the two games using Pytest and generate a code coverage report.
 
