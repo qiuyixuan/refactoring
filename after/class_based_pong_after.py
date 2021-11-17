@@ -48,7 +48,7 @@ class Ball:
 
         self.turt = make_turtle("square", "white", 1, 1, 0, 0)
         self.ball_d = {"dx": 0.0925, "dy": 0.0925}
-        self.ball_dx_inital = 0.0925
+        self.ball_dx_initial = 0.0925
         self.border = 290
         self.x_position = 0
         self.y_position = 0
@@ -161,13 +161,13 @@ class Game:
             font=("Courier", 24, "normal"),
         )
         self.ball.goto(0, 0)
-        self.ball.ball_dx_inital *= -1
-        self.ball.ball_d["dx"] = self.ball.ball_dx_inital
+        self.ball.ball_dx_initial *= -1
+        self.ball.ball_d["dx"] = self.ball.ball_dx_initial
 
     def collision(self, border):
         self.ball.goto(border, self.ball.ycor())
         self.ball.ball_d["dx"] *= -1.5
-        self.ball.ball_dx_inital *= -1
+        self.ball.ball_dx_initial *= -1
 
 
 def make_window(window_title, bgcolor, width, height):
@@ -197,9 +197,9 @@ def make_turtle(shape, color, stretch_width, stretch_length, x_pos, y_pos):
 def main():
     """ the main function where the game events take place """
 
-    myGame = Game(800, 600, 350, 0)
+    my_game = Game(800, 600, 350, 0)
     while True:
-        myGame.game_loop()
+        my_game.game_loop()
 
 
 if __name__ == "__main__":
