@@ -5,6 +5,7 @@ Pong (Paddle) - test code
 """
 
 import sys
+
 sys.path.append("../after/")
 import class_based_pong_after as pong
 
@@ -24,6 +25,7 @@ def test_make_turtle():
     assert turt.shapesize()[1] == 1
     assert turt.pos() == (0.00, 0.00)
 
+
 def test_init():
     paddle = pong.Paddle(100, -200)
 
@@ -37,11 +39,13 @@ def test_init():
     assert paddle.turt.shapesize()[1] == 1
     assert paddle.turt.pos() == (100.00, -200.00)
 
+
 def test__up():
     paddle = pong.Paddle(0, 0)
     paddle.up()
     assert paddle.turt.pos() == (0.00, 20.00)
     assert paddle.y_position == 20
+
 
 def test_down():
     paddle = pong.Paddle(0, 0)
@@ -49,9 +53,11 @@ def test_down():
     assert paddle.turt.pos() == (0.00, -20.00)
     assert paddle.y_position == -20
 
+
 def test_xcor():
     paddle = pong.Paddle(10, 20)
     assert paddle.xcor() == 10
+
 
 def test_ycor():
     paddle = pong.Paddle(-10, -30)
