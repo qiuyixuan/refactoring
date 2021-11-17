@@ -8,3 +8,4 @@
 
 2. Create unit tests for the two games using Pytest and generate a code coverage report.
 
+![test coverage for connect4](test_coverage.png)
