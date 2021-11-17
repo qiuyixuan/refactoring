@@ -20,15 +20,13 @@ class Paddle:
 
     
     def up(self):
-        y = self.turt.ycor()
-        y += self.distance
+        y = self.turt.ycor() + self.distance
         self.turt.sety(y)
         self.y_position = y
 
 
     def down(self):
-        y = self.turt.ycor()
-        y -= self.distance          
+        y = self.turt.ycor() - self.distance     
         self.turt.sety(y) 
         self.y_position = y  
         
@@ -89,8 +87,8 @@ class Ball:
     def goto(self, x_pos, y_pos):
         ''' moves ball to new x, y positions '''
         self.turt.goto(x_pos, y_pos)
-        self.x_position = self.turt.xcor()
-        self.y_position = self.turt.ycor()
+        self.x_position = x_pos
+        self.y_position = y_pos
 
 
 
@@ -122,24 +120,31 @@ class Game:
 
     def __init__(self, width, height, x_pos_paddle, y_pos_paddle):
         self.window = make_window("Pong - A CS151 Reproduction!", "black", width, height)
+        
         # Score
         self.score_player1 = 0
         self.score_player2 = 0
+
         # Paddels
         self.paddle_1 = Paddle(-x_pos_paddle, y_pos_paddle)
         self.paddle_2 = Paddle(x_pos_paddle, y_pos_paddle)
+       
         # Balls
         self.ball = Ball()
+        
         # Pen
         self.pen = make_turtle("square", "white", 1, 1, 0, 260)
         self.pen.write("Player A: 0  Player B: 0", align="center", font=("Courier", 24, "normal"))
         self.pen.hideturtle()
+
         # Keyboard bindings
+
         self.window.listen() #Listen for keyboard input
         self.window.onkeypress(self.paddle_1.up, "w") #when you press w run paddle_a_up
         self.window.onkeypress(self.paddle_1.down, "s")
         self.window.onkeypress(self.paddle_2.up, "Up")
         self.window.onkeypress(self.paddle_2.down, "Down")
+
         # Paddle x position
         self.border = x_pos_paddle
 
