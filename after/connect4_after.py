@@ -165,7 +165,7 @@ def main():
     game = Connect4(x_offset=-150, y_offset=200, tile_size=50, turn=1)
     game.make_window("Connect 4", "light sky blue", 800, 600)
     game.make_turtle("classic", "white", 1, 1, 0, 0)
-    
+
     game.draw_grid(game.x_offset, game.y_offset)
 
     game.window.onscreenclick(game.play)
