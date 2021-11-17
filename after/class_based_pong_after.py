@@ -84,30 +84,6 @@ class Ball:
         self.y_position = y_pos
 
 
-def make_window(window_title, bgcolor, width, height):
-    """this function creates a screen object and returns it"""
-
-    window = turtle.getscreen()  # Set the window size
-    window.title(window_title)
-    window.bgcolor(bgcolor)
-    window.setup(width, height)
-    window.tracer(0)  # turns off screen updates for the window Speeds up the game
-    return window
-
-
-def make_turtle(shape, color, stretch_width, stretch_length, x_pos, y_pos):
-    """ creates a turtle and sets initial position """
-
-    turt = turtle.Turtle()
-    turt.speed(0)  # Speed of animation, 0 is max
-    turt.shape(shape)  # square defualt is 20,20
-    turt.color(color)
-    turt.shapesize(stretch_width, stretch_length)
-    turt.penup()
-    turt.goto(x_pos, y_pos)  # Start position
-    return turt
-
-
 class Game:
     def __init__(self, width, height, x_pos_paddle, y_pos_paddle):
         self.window = make_window(
@@ -192,6 +168,30 @@ class Game:
         self.ball.goto(border, self.ball.ycor())
         self.ball.ball_d["dx"] *= -1.5
         self.ball.ball_dx_inital *= -1
+
+
+def make_window(window_title, bgcolor, width, height):
+    """this function creates a screen object and returns it"""
+
+    window = turtle.getscreen()  # Set the window size
+    window.title(window_title)
+    window.bgcolor(bgcolor)
+    window.setup(width, height)
+    window.tracer(0)  # turns off screen updates for the window Speeds up the game
+    return window
+
+
+def make_turtle(shape, color, stretch_width, stretch_length, x_pos, y_pos):
+    """ creates a turtle and sets initial position """
+
+    turt = turtle.Turtle()
+    turt.speed(0)  # Speed of animation, 0 is max
+    turt.shape(shape)  # square defualt is 20,20
+    turt.color(color)
+    turt.shapesize(stretch_width, stretch_length)
+    turt.penup()
+    turt.goto(x_pos, y_pos)  # Start position
+    return turt
 
 
 def main():
