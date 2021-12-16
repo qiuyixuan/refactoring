@@ -1,7 +1,7 @@
 # Project 4: Refactoring
 
 
-# Extension:
+# Extensions:
   
 #### 1. Apply refactoring to the file “search_maze_before.py”  
  
